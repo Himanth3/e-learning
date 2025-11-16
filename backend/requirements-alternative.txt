@@ -1,0 +1,14 @@
+# Alternative requirements if mysqlclient installation fails
+# Use this if you have issues with mysqlclient on Windows
+
+Django==4.2.7
+djangorestframework==3.14.0
+djangorestframework-simplejwt==5.3.0
+django-cors-headers==4.3.1
+pymysql==1.1.0
+python-dotenv==1.0.0
+
+# After installing, add this to manage.py before running:
+# import pymysql
+# pymysql.install_as_MySQLdb()
+

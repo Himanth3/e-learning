@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DSA with Python</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+
+    <header>
+        <h1>🧠 DSA with Python</h1>
+        <p class="tagline">Crack coding interviews by mastering Data Structures and Algorithms!</p>
+         <nav>
+            <a href="../index.html">Home</a>
+            <a href="../courses.html">Courses</a>
+            <a href="../quiz.html">Quiz</a>
+            <a href="../projects.html">Projects</a>
+            <a href="../Download.html">Download</a>
+            <a href="../contact.html">Contact</a>
+            <button id="themeToggle" class="theme-btn">
+    <span id="themeIcon">🌞</span> Theme
+</button>
+        </nav>
+    </header>
+
+    <section class="course-content">
+        <h2>📘 Start from</h2><br>
+        <ul>
+            <li>📊 Arrays and Strings</li>
+            <li>🔁 Recursion and Backtracking</li>
+            <li>🌳 Linked Lists, Trees, and Graphs</li>
+            <li>🗃️ Stacks and Queues</li>
+            <li>🔍 Searching and Sorting</li>
+            <li>⚙️ Time and Space Complexity</li>
+        </ul>
+    </section>
+
+    <section class="code-preview">
+        <h3>👨‍💻 Example Code:</h3>
+        <pre><code># Binary Search in Python
+
+def binary_search(arr, target):
+    left, right = 0, len(arr) - 1
+    while left <= right:
+        mid = (left + right) // 2
+        if arr[mid] == target:
+            return mid
+        elif arr[mid] < target:
+            left = mid + 1
+        else:
+            right = mid - 1
+    return -1
+
+print(binary_search([1, 2, 3, 4, 5], 4))  # Output: 3</code></pre>
+<script src="../static/js/script.js"></script>
+    </section>
+
+    <footer>
+        <p>💡 Code smart. Solve fast. DSA is your key to tech success! 🚀</p>
+        <p>&copy; 2025 HIMANTH BAMMIDI</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flask Web Development</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+
+    <header>
+        <h1>🔥 Flask Web Development</h1>
+        <p class="tagline">Build powerful web apps with Python & Flask!</p>
+         <nav>
+            <a href="../index.html">Home</a>
+            <a href="../courses.html">Courses</a>
+            <a href="../quiz.html">Quiz</a>
+            <a href="../projects.html">Projects</a>
+            <a href="../Download.html">Download</a>
+            <a href="../contact.html">Contact</a>
+            <button id="themeToggle" class="theme-btn">
+    <span id="themeIcon">🌞</span> Theme
+</button>
+        </nav>
+    </header>
+
+    <section class="course-content">
+        <h2>📘 Start from</h2><br>
+        <ul>
+            <li>🌐 Introduction to Flask</li>
+            <li>🛠️ Setting up your Flask Project</li>
+            <li>🧭 Routing and Templates</li>
+            <li>📄 Forms and Request Handling</li>
+            <li>💾 Connecting to Databases</li>
+            <li>🔐 Authentication and Deployment</li>
+        </ul>
+    </section>
+
+    <section class="code-preview">
+        <h3>👨‍💻 Example Code:</h3>
+        <pre><code>from flask import Flask
+
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    return "Hello from Flask! 🔥"
+
+if __name__ == '__main__':
+    app.run(debug=True)</code></pre>
+    <script src="../static/js/script.js"></script>
+    </section>
+
+    <footer>
+        <p>🌍 Web starts here. Build smarter with Flask. 🚀</p>
+        <p>&copy; 2025 HIMANTH BAMMIDI</p>
+    </footer>
+
+</body>
+</html>

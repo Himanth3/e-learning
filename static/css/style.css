@@ -1,0 +1,523 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f9f9f9;
+    color: #222;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background-color: #306998;
+    color: white;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.tagline {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: #ffeb99;
+}
+
+nav a {
+    margin: 0 1rem;
+    text-decoration: none;
+    color: #ffeb99;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #ffffff;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 3rem 1rem;
+    background: #ffd43b;
+    color: #1e1e1e;
+}
+
+.hero h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.motivation {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #306998;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 30px;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #204060;
+}
+
+/* Code Section */
+.code-preview {
+    background: #2b2b2b;
+    color: #00ff88;
+    padding: 2rem;
+    margin: 2rem auto;
+    max-width: 600px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.code-preview pre {
+    white-space: pre-wrap;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.1rem;
+}
+
+/* Benefits Section */
+.benefits {
+    padding: 2rem;
+    max-width: 800px;
+    margin: auto;
+}
+
+.benefits h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.benefits ul {
+    list-style-type: '💡 ';
+    padding-left: 2rem;
+    font-size: 1.1rem;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #222;
+    color: #ccc;
+    margin-top: 3rem;
+    font-size: 0.9rem;
+}
+
+
+
+/* COURSES */
+.courses {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+    padding: 3rem;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.course-card {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    text-align: center;
+    padding: 1.5rem;
+    transition: transform 0.3s;
+}
+
+.course-card:hover {
+    transform: translateY(-5px);
+}
+
+.course-card img {
+    width: 100%;
+    max-height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.course-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.course-card p {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    background-color: #306998;
+    color: white;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background-color: #204060;
+}
+
+
+.course-content {
+    background-color: #ffffff;
+    max-width: 700px;
+    margin: 3rem auto;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    text-align: left;
+}
+
+.course-content h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #306998;
+}
+
+.course-content ul {
+    list-style-type: '📘 ';
+    padding-left: 1.5rem;
+    font-size: 1.1rem;
+    line-height: 2rem;
+}
+
+
+
+
+/* Quiz Section */
+.quiz {
+    max-width: 800px;
+    margin: 3rem auto;
+    padding: 2rem;
+    background: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.quiz h3 {
+    margin: 1.5rem 0 0.5rem;
+    font-size: 1.2rem;
+    color: #306998;
+}
+
+.quiz input[type="radio"] {
+    margin-right: 0.5rem;
+    accent-color: #ffd43b;
+}
+
+.quiz button {
+    margin-top: 1.5rem;
+    background-color: #306998;
+    color: white;
+    padding: 0.7rem 1.5rem;
+    border: none;
+    border-radius: 30px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.quiz button:hover {
+    background-color: #204060;
+}
+
+.result {
+    margin-top: 1.5rem;
+    font-size: 1.2rem;
+    color: #007f5f;
+    background-color: #e0f7e9;
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    display: inline-block;
+}
+
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 1rem 0;
+    background-color: #f0f0f0;
+    padding: 0.7rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: background-color 0.3s ease-in-out;
+}
+
+nav a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #306998;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+nav a:hover {
+    background-color: #306998;
+    color: #fff;
+    transform: scale(1.05);
+}
+
+/* ===================== Responsive Design ===================== */
+
+/* Tablets (768px and below) */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .tagline {
+        font-size: 1rem;
+    }
+
+    .hero h2 {
+        font-size: 1.5rem;
+    }
+
+    .motivation {
+        font-size: 1rem;
+    }
+
+    .cta-button {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+
+    .code-preview {
+        padding: 1rem;
+        margin: 1rem;
+        font-size: 1rem;
+    }
+
+    .benefits ul {
+        font-size: 1rem;
+        padding-left: 1rem;
+    }
+
+    .course-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .course-card p {
+        font-size: 0.9rem;
+    }
+
+    .btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .course-content ul {
+        font-size: 1rem;
+        line-height: 1.6rem;
+    }
+
+    .quiz {
+        padding: 1rem;
+        font-size: 1rem;
+    }
+
+    .quiz button {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        gap: 0.8rem;
+        padding: 0.5rem;
+    }
+
+    nav a {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
+    }
+}
+
+/* Mobile (480px and below) */
+@media (max-width: 480px) {
+    header {
+        padding: 1.5rem;
+    }
+
+    header h1 {
+        font-size: 1.6rem;
+    }
+
+    .tagline {
+        font-size: 0.95rem;
+    }
+
+    .hero {
+        padding: 2rem 1rem;
+    }
+
+    .hero h2 {
+        font-size: 1.3rem;
+    }
+
+    .motivation {
+        font-size: 0.95rem;
+    }
+
+    .cta-button {
+        width: 100%;
+        display: block;
+        font-size: 1rem;
+    }
+
+    .code-preview {
+        padding: 1rem;
+        font-size: 0.95rem;
+    }
+
+    .benefits {
+        padding: 1rem;
+    }
+
+    .benefits ul {
+        font-size: 0.95rem;
+    }
+
+    .courses {
+        padding: 1.5rem 1rem;
+        gap: 1rem;
+    }
+
+    .course-card {
+        padding: 1rem;
+    }
+
+    .btn {
+        width: 100%;
+        font-size: 0.95rem;
+    }
+
+    .course-content {
+        padding: 1rem;
+    }
+
+    .course-content ul {
+        font-size: 1rem;
+    }
+
+    .quiz {
+        padding: 1rem;
+        font-size: 0.95rem;
+    }
+
+    .quiz button {
+        width: 100%;
+        font-size: 1rem;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    nav a {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* Toggle Theme Button */
+.theme-btn {
+    margin-top: 1rem;
+    background-color: #ffeb99;
+    color: #222;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.theme-btn:hover {
+    background-color: #ffd43b;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #121212;
+    color: #000000;
+}
+
+.dark-mode header {
+    background-color: #1f2b3a;
+    color: #fffdfd;
+}
+
+.dark-mode .tagline {
+    color: #ffd43b;
+}
+
+.dark-mode nav {
+    background-color: #2a2a2a;
+}
+
+.dark-mode nav a {
+    color: #ffd43b;
+}
+
+.dark-mode nav a:hover {
+    background-color: #ffd43b;
+    color: #1f1f1f;
+}
+
+.dark-mode .hero {
+    background-color: #222;
+    color: #ffffff;
+}
+
+.dark-mode .cta-button {
+    background-color: #ffd43b;
+    color: #000;
+}
+
+.dark-mode .cta-button:hover {
+    background-color: #f0c000;
+}
+
+.dark-mode .code-preview {
+    background-color: #1e1e1e;
+    color: #00ff88;
+}
+
+.dark-mode .benefits  {
+    color: #ddd;
+}
+
+
+

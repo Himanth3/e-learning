@@ -1,67 +1,70 @@
-import axios from 'axios'
+import axios from "axios";
 
+// Use environment variable for base URL
 const axiosClient = axios.create({
-  baseURL: 'http://localhost:8000',
+  baseURL: import.meta.env.VITE_API_BASE_URL, // Works on Vercel + Local
   headers: {
-    'Content-Type': 'application/json',
+    "Content-Type": "application/json",
   },
-})
+});
 
-// Request interceptor to add JWT token
+// Add Access Token to every request
 axiosClient.interceptors.request.use(
   (config) => {
-    const token = localStorage.getItem('access_token')
+    const token = localStorage.getItem("access_token");
     if (token) {
-      config.headers.Authorization = `Bearer ${token}`
+      config.headers.Authorization = `Bearer ${token}`;
     }
-    return config
+    return config;
   },
-  (error) => {
-    return Promise.reject(error)
-  }
-)
+  (error) => Promise.reject(error)
+);
 
-// Response interceptor to handle token refresh
+// Handle Token Refresh Automatically
 axiosClient.interceptors.response.use(
-  (response) => {
-    return response
-  },
-  async (error) => {
-    const originalRequest = error.config
+  (response) => response,
 
-    // If error is 401 and we haven't tried to refresh yet
+  async (error) => {
+    const originalRequest = error.config;
+
+    // If access token expired (401)
     if (error.response?.status === 401 && !originalRequest._retry) {
-      originalRequest._retry = true
+      originalRequest._retry = true;
+
+      const refreshToken = localStorage.getItem("refresh_token");
+
+      if (!refreshToken) {
+        // No refresh token → logout
+        localStorage.clear();
+        window.location.href = "/login";
+        return Promise.reject(error);
+      }
 
       try {
-        const refreshToken = localStorage.getItem('refresh_token')
-        if (!refreshToken) {
-          throw new Error('No refresh token')
-        }
-
+        // Refresh token API
         const response = await axios.post(
-          'http://localhost:8000/api/token/refresh/',
+          `${import.meta.env.VITE_API_BASE_URL}token/refresh/`,
           { refresh: refreshToken }
-        )
+        );
 
-        const { access } = response.data
-        localStorage.setItem('access_token', access)
+        const newAccess = response.data.access;
 
-        // Retry original request with new token
-        originalRequest.headers.Authorization = `Bearer ${access}`
-        return axiosClient(originalRequest)
+        // Save new access token
+        localStorage.setItem("access_token", newAccess);
+
+        // Retry the original request
+        originalRequest.headers.Authorization = `Bearer ${newAccess}`;
+        return axiosClient(originalRequest);
       } catch (refreshError) {
-        // Refresh failed, logout user
-        localStorage.removeItem('access_token')
-        localStorage.removeItem('refresh_token')
-        window.location.href = '/login'
-        return Promise.reject(refreshError)
+        localStorage.clear();
+        window.location.href = "/login";
+        return Promise.reject(refreshError);
       }
     }
 
-    return Promise.reject(error)
+    return Promise.reject(error);
   }
-)
+);
 
-export default axiosClient
+export default axiosClient;
 

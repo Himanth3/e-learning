@@ -1,6 +1,6 @@
 import axios from "axios";
 
-// axios instance with dynamic backend URL
+// Backend API URL (Render)
 const axiosClient = axios.create({
   baseURL: import.meta.env.VITE_API_BASE_URL, 
   headers: {
@@ -20,14 +20,13 @@ axiosClient.interceptors.request.use(
   (error) => Promise.reject(error)
 );
 
-// Auto-refresh token on 401
+// Auto-refresh token
 axiosClient.interceptors.response.use(
   (response) => response,
 
   async (error) => {
     const originalRequest = error.config;
 
-    // If access token expired
     if (error.response?.status === 401 && !originalRequest._retry) {
       originalRequest._retry = true;
 
@@ -51,6 +50,7 @@ axiosClient.interceptors.response.use(
 
         originalRequest.headers.Authorization = `Bearer ${newAccess}`;
         return axiosClient(originalRequest);
+
       } catch (refreshError) {
         localStorage.clear();
         window.location.href = "/login";

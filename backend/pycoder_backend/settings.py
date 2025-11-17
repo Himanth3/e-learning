@@ -14,7 +14,7 @@ DEBUG = True   # Change to False later
 ALLOWED_HOSTS = [
     "localhost",
     "127.0.0.1",
-    "e-learning-1-0jh5.onrender.com",  # Render backend URL
+    "e-learning-1-0jh5.onrender.com",   # Render backend
     os.environ.get("RENDER_EXTERNAL_HOSTNAME"),
 ]
 
@@ -48,7 +48,7 @@ MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
 
-    "corsheaders.middleware.CorsMiddleware",  # MUST be above CommonMiddleware
+    "corsheaders.middleware.CorsMiddleware",  # IMPORTANT
     "django.middleware.common.CommonMiddleware",
 
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -58,28 +58,6 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = "pycoder_backend.urls"
-
-
-# -------------------------------
-# TEMPLATES
-# -------------------------------
-TEMPLATES = [
-    {
-        "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
-        "APP_DIRS": True,
-        "OPTIONS": {
-            "context_processors": [
-                "django.template.context_processors.debug",
-                "django.template.context_processors.request",
-                "django.contrib.auth.context_processors.auth",
-                "django.contrib.messages.context_processors.messages",
-            ],
-        },
-    },
-]
-
-WSGI_APPLICATION = "pycoder_backend.wsgi.application"
 
 
 # -------------------------------
@@ -107,7 +85,7 @@ REST_FRAMEWORK = {
         "rest_framework_simplejwt.authentication.JWTAuthentication",
     ),
     "DEFAULT_PERMISSION_CLASSES": [
-        "rest_framework.permissions.AllowAny",  # Allow API access
+        "rest_framework.permissions.AllowAny",
     ],
 }
 
@@ -120,15 +98,15 @@ SIMPLE_JWT = {
 
 
 # -------------------------------
-# CORS SETTINGS (VERY IMPORTANT)
+# CORS SETTINGS (FIXED)
 # -------------------------------
 CORS_ALLOWED_ORIGINS = [
-    "https://e-learning-pi-five.vercel.app",  # Vercel frontend
-    "http://localhost:5173",                  # Local React
+    "https://e-learning-gamma-hazel.vercel.app",   # Your frontend 🔥
+    "http://localhost:5173",
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-    "https://e-learning-pi-five.vercel.app",
+    "https://e-learning-gamma-hazel.vercel.app",
 ]
 
 CORS_ALLOW_ALL_ORIGINS = False

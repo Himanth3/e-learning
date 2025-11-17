@@ -208,3 +208,9 @@ CORS_ALLOW_HEADERS = [
     'x-requested-with',
 ]
 
+ALLOWED_HOSTS = [
+    "localhost",
+    "127.0.0.1",
+    os.environ.get("RENDER_EXTERNAL_HOSTNAME"),
+]
+
